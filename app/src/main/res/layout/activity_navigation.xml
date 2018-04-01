@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.myapplication.NavigationActivity"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/hasNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否有虚拟键"/>
+
+    <Button
+        android:id="@+id/navigationOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="虚拟键是否打开"/>
+
+    <Button
+        android:id="@+id/navigationHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="虚拟键高度"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

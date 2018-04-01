@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_view_pager_scroll">ViewPagerScrollActivity</string>
+    <string name="a">aa</string>
+    <string name="b">bb</string>
+    <string name="c">cc</string>
+    <string name="d">dd</string>
+    <string name="data">data</string>
+</resources>

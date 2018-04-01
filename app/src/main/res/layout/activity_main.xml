@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.john.myapplication.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recyclerView的数据测试" />
+
+        <Button
+            android:id="@+id/btnOwn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义界面" />
+
+        <Button
+            android:id="@+id/btn_slide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="滑动问题" />
+
+        <Button
+            android:id="@+id/topViewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="轮播" />
+
+        <Button
+            android:id="@+id/customView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义vue" />
+
+        <Button
+            android:id="@+id/draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义vue" />
+
+        <Button
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gps" />
+
+        <Button
+            android:id="@+id/webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="webview" />
+
+        <Button
+            android:id="@+id/compress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片压缩" />
+        <Button
+            android:id="@+id/cameraview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相机" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="启动" />
+
+        <Button
+            android:id="@+id/navigation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="虚拟键" />
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\android\finereport_android\AndroidDemo\MyApplication\ViewPagerIndicator\src\main\assets"/><source path="D:\android\finereport_android\AndroidDemo\MyApplication\ViewPagerIndicator\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\android\finereport_android\AndroidDemo\MyApplication\ViewPagerIndicator\src\debug\assets"/></dataSet></merger>

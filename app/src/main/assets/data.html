@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript HTML App</title>
+</head>
+<body background='file:///storage/emulated/0/miao.jpg'>
+<!--href为"finereportv9://" 或 "com.fr.finereportv9://"-->
+<a href="finereport://">打开</a>
+<a href="com.fr.Finereport://%7B%22serverName%22%3A%22test%22%2C%22serverUrl%22%3A%22http%3A%2F%2Fxxxxxxxx%22%7D">打开</a>
+
+<button type="button" onclick="loadXMLDoc()">跨域</button>
+
+<script>
+function loadXMLDoc()
+{
+    window.open("http://www.baidu.com");
+    var arm = "file:///etc/hosts";
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest();
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        //alert("status is"+xmlhttp.status);
+        if (xmlhttp.readyState==4)
+        {
+              console.log(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET",arm);
+    xmlhttp.send(null);
+
+}
+</script>
+</body>
+</html>

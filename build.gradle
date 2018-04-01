@@ -1,0 +1,95 @@
+import jdk.nashorn.internal.objects.Global
+import jdk.nashorn.internal.parser.JSONParser
+import jdk.nashorn.internal.runtime.Context
+import jdk.nashorn.internal.runtime.ScriptObject
+import jdk.nashorn.internal.runtime.Source
+import groovy.json.JsonSlurper
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//统一配置项
+def releaseTime() {
+
+    return new Date().format("yyyy/MM/dd HH:mm", TimeZone.getTimeZone("Asia/Shanghai"))
+}
+
+def versionCode() {
+    return 2
+}
+
+def getApiServerUrl() {
+    return "getApiServerUrl"
+}
+
+//def getA(){
+//    String jsonStr = '{"a":"a", "b":"b"}'
+////    final Global global = new Global(Context.getContext());
+////    final boolean dualFields = ((ScriptObject) global).useDualFields();
+////    final ScriptObject global=Context.getGlobalTrusted();
+////    final boolean dualFields = ((ScriptObject) global).useDualFields();
+//    JSONParser jsonParser = new JSONParser(jsonStr, global, dualFields)
+//    Node node = jsonParser.parse()
+//    return node.a;
+//}
+//
+//def getB(){
+////    String jsonStr = '{"a":"a", "b":"b"}';
+////    final Global global = Context.getGlobal();
+////    final boolean dualFields = ((ScriptObject) global).useDualFields();
+////    final ScriptObject global=Context.getGlobalTrusted();
+////    final boolean dualFields = ((ScriptObject) global).useDualFields();
+////    JSONParser jsonParser = new JSONParser(jsonStr, global, dualFields)
+////    Node node = jsonParser.parse()
+//    return node.b;
+//}
+
+def getFileString(){
+//    def file = new File("a.json")
+//    def str = file.text
+//    def slurper = new JsonSlurper()
+//
+//    Node node = new Node()
+//    node = slurper.parseText(str)
+
+    return ""
+}
+
+class Node{
+    String a
+    String b
+    ArrayList<Data> data
+
+    class Data{
+        String c
+        String d
+    }
+}
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+
+    //IFVersionInfo中的配置项
+    versionDate = releaseTime() // 当前版本发布时间
+    versionCode = versionCode() //当前版本
+    apiServerUrl = getApiServerUrl() //BuildConfig自定义的字段
+    fileString = getFileString()
+}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
