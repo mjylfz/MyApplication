@@ -5,6 +5,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.ViewTreeObserver;
 
 /**
  * Created by LFZ on 2017/7/21.
@@ -13,11 +14,11 @@ import android.view.MotionEvent;
 
 public class NeiNestScrollView extends NestedScrollView {
     public NeiNestScrollView(Context context) {
-        super(context);
+        this(context, null, 0);
     }
 
     public NeiNestScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public NeiNestScrollView(Context context, AttributeSet attrs, int defStyleAttr) {

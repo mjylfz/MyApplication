@@ -11,11 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapter.RecycleVAdatper;
+import view.NeiNestScrollView;
+import view.RecyclerViewScroll;
 
 public class SlipdActivity extends AppCompatActivity {
 
     SwipeRefreshLayout swipeRefreshLayout;
-    RecyclerView recyclerView;
+    RecyclerViewScroll recyclerView;
+    NeiNestScrollView neiNestScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,10 @@ public class SlipdActivity extends AppCompatActivity {
      */
     private void initView(){
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.activity_slipd);
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        neiNestScrollView = (NeiNestScrollView)findViewById(R.id.neiNestScrollView);
+
+
+        recyclerView = (RecyclerViewScroll)findViewById(R.id.recyclerView);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -54,6 +60,8 @@ public class SlipdActivity extends AppCompatActivity {
         });
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setSmoothScrollbarEnabled(true);
+        manager.setAutoMeasureEnabled(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
 
