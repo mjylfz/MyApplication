@@ -33,11 +33,9 @@ public class NeiNestScrollView extends NestedScrollView {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Log.e("NeiNestScrollView","down");
                 getParent().requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.e("NeiNestScrollView","move");
                 getParent().requestDisallowInterceptTouchEvent(true);
                 break;
 
