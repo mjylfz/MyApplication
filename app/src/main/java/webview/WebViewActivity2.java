@@ -14,6 +14,10 @@ import android.webkit.WebViewClient;
 
 import com.example.john.myapplication.R;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+
 /**
  * Created by LFZ on 2018/3/28.
  */
@@ -31,6 +35,11 @@ public class WebViewActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview_file);
         initWebView();
+        try {
+            copyAssetsFile2Data();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -40,7 +49,7 @@ public class WebViewActivity2 extends AppCompatActivity {
 //        webView.getSettings().setJavaScriptEnabled(true);
 //        webView.getSettings().setLoadsImagesAutomatically(true);
         //运行webview通过URI获取安卓文件
-        String url = "file:///android_asset/data.html";
+        String url = "file:///data/data/com.example.john.myapplication/files/data.html";
 //        String url = "file:///sdcard/data.html";
         // 禁止 file 协议加载 JavaScript
 //        if (url.startsWith("file://")) {
@@ -50,12 +59,12 @@ public class WebViewActivity2 extends AppCompatActivity {
 //        }
 
         //false可以防止读取本地的html，或者htm使用本地图片作为背景
-        webView.getSettings().setAllowFileAccess(true);
+//        webView.getSettings().setAllowFileAccess(false);
 
         // 设置是否允许通过 file url 加载的 Js代码读取其他的本地文件,默认是false。
-        webView.getSettings().setAllowFileAccessFromFileURLs(false);
+//        webView.getSettings().setAllowFileAccessFromFileURLs(true);
         // 设置是否允许通过 file url 加载的 Javascript 可以访问其他的源(包括http、https等源)，默认是false。
-        webView.getSettings().setAllowUniversalAccessFromFileURLs(false);
+//        webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
 
 
@@ -70,7 +79,23 @@ public class WebViewActivity2 extends AppCompatActivity {
         webView.loadUrl(url);
     }
 
+    private void copyAssetsFile2Data() throws Exception{
+        String path = this.getApplicationContext().getFilesDir()
+                .getAbsolutePath()+ "/data.html";   //data/data目录
+        File file = new File(path);
+        InputStream in = this.getAssets().open("data.html");  //从assets目录下复制
+        FileOutputStream out = new FileOutputStream(file);
+        int length = -1;
+        byte[] buf = new byte[1024];
+        while ((length = in.read(buf)) != -1)
+        {
+            out.write(buf, 0, length);
+        }
+        out.flush();
+        in.close();
+        out.close();
 
+    }
 
 
 

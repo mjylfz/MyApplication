@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.ScrollView;
 
 /**
  * Created by LFZ on 2017/7/21.
@@ -26,34 +25,37 @@ public class MyNestScrollView extends NestedScrollView {
 
     /**
      * down和move都请求refresh不拦截，这样move会被下层滚动收到，下层下滑不会进行刷新
+     *
      * @param ev
      * @return
      */
-        @Override
-        public boolean dispatchTouchEvent(MotionEvent ev) {
-            switch (ev.getAction()){
-                case MotionEvent.ACTION_DOWN:
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    break;
-            }
-            return super.dispatchTouchEvent(ev);
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                getParent().requestDisallowInterceptTouchEvent(true);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                getParent().requestDisallowInterceptTouchEvent(true);
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     float x = 0;
     float y = 0;
     float lastx = 0;
     float lasty = 0;
+
     /**
      * down不拦截，move虽然拦截，下层request(true)，所以不拦截
+     *
      * @param ev
      * @return
      */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 lastx = ev.getX();
                 lasty = ev.getY();
@@ -65,9 +67,9 @@ public class MyNestScrollView extends NestedScrollView {
                 x = ev.getX();
                 y = ev.getY();
 //                Log.e("外层","jj");
-                if(Math.abs(x - lastx) < Math.abs(y - lasty)&&Math.abs(y-lasty)-Math.abs(x-lastx)>10){
+                if (Math.abs(x - lastx) < Math.abs(y - lasty) && Math.abs(y - lasty) - Math.abs(x - lastx) > 10) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             case MotionEvent.ACTION_UP:

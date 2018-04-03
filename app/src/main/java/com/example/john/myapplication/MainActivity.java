@@ -15,6 +15,7 @@ import customview.CustomviewActivity;
 import image.BitmapActivity;
 import location.LocationActivity;
 import recodeline.RecodeLineActivity;
+import shortcut.ShortCutActivity;
 import view.FCTButtonWidget;
 import webview.WebViewActivity;
 import webview.WebViewActivity2;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button cameraview;
     Button start;
     Button navigatioButton;
+    Button shortCutButton;
 
 
     @Override
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cameraview = (Button)findViewById(R.id.cameraview);
         start = (Button)findViewById(R.id.start);
         navigatioButton = (Button)findViewById(R.id.navigation_button);
-
+        shortCutButton = (Button)findViewById(R.id.shortcut_button);
     }
 
     private void setOnclickListener(){
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cameraview.setOnClickListener(this);
         start.setOnClickListener(this);
         navigatioButton.setOnClickListener(this);
+        shortCutButton.setOnClickListener(this);
     }
 
     @Override
@@ -125,6 +128,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.navigation_button:
                 startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+                break;
+            case R.id.shortcut_button:
+                startActivity(new Intent(MainActivity.this, ShortCutActivity.class));
                 break;
         }
     }

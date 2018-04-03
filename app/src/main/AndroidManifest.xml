@@ -58,6 +58,7 @@
 
         <activity android:name=".NavigationActivity"></activity>
         <activity android:name="webview.WebViewActivity2" />
+        <activity android:name="shortcut.ShortCutActivity" />
     </application>
 
 </manifest>

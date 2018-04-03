@@ -82,6 +82,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="虚拟键" />
+        <Button
+            android:id="@+id/shortcut_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="截图" />
 
 
     </LinearLayout>
