@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:lines="1"
+        android:imeOptions="flagNoExtractUi"
         />
 
     <Button
@@ -52,5 +53,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="setValue"/>
+
+    <customview.DiagonalView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="100dp"/>
 
 </LinearLayout>

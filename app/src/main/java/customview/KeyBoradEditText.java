@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 /**
  * Created by LFZ on 2017/9/7.
+ * 用来实现setText不让TextWatcher监听，手动输入才让TextWatcher监听
  */
 
 public class KeyBoradEditText extends EditText {
